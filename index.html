@@ -88,14 +88,18 @@
     <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#f4f4f4] to-gray-200 dark:from-[#0a192f] dark:to-[#1a2b4b] transition-colors duration-300">
 
         <!-- Header Section -->
-        <header class="w-full max-w-4xl bg-white/80 dark:bg-[#1a2b4b]/80 backdrop-blur-sm shadow-lg dark:shadow-xl rounded-xl p-8 mb-12 flex items-center justify-between transition-all duration-300" data-aos="fade-down">
+        <header class="w-full max-w-4xl bg-white/80 dark:bg-[#1a2b4b]/80 backdrop-blur-sm shadow-lg dark:shadow-xl rounded-xl p-6 sm:p-8 mb-12 flex flex-col sm:flex-row items-center sm:justify-between gap-6 sm:gap-0 transition-all duration-300" data-aos="fade-down">
+            <!-- Image now has margin-bottom on mobile, which disappears on larger screens -->
             <div class="flex-shrink-0">
                 <img src="image.jpg" alt="SHAHRIYOR's Profile Picture" class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-4 border-[#1e90ff] dark:border-[#00ffff] shadow-md transform hover:scale-110 transition-transform duration-300">
             </div>
-            <div class="text-right flex-grow pl-8">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-[#1e90ff] dark:text-[#00ffff] mb-2 leading-tight">Hello, I'm <span class="text-[#1e90ff] dark:text-[#00ffff]">SHAHRIYOR</span></h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 font-medium mb-4">A Passionate Tech Enthusiast | System Explorer</p>
-                <div class="flex justify-end space-x-4">
+            <!-- Text container is now centered on mobile, right-aligned on larger screens -->
+            <div class="text-center sm:text-right flex-grow sm:pl-8">
+                <!-- Font sizes are now responsive -->
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1e90ff] dark:text-[#00ffff] mb-2 leading-tight">Hello, I'm <span class="block sm:inline">SHAHRIYOR</span></h1>
+                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-medium mb-4">A Passionate Tech Enthusiast | System Explorer</p>
+                <!-- Icons are centered on mobile -->
+                <div class="flex justify-center sm:justify-end space-x-4">
                     <!-- Social Links -->
                     <a href="https://github.com/aviabrain" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-[#1e90ff] dark:text-gray-400 dark:hover:text-[#00ffff] transition duration-300 transform hover:scale-110">
                         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.298 2.766 7.95 6.593 9.213.48.088.654-.209.654-.465 0-.23-.008-.847-.013-1.659-2.684.584-3.25-1.293-3.25-1.293-.44-.997-1.07-1.264-1.07-1.264-.875-.596.066-.584.066-.584.966.069 1.478.995 1.478.995.856 1.464 2.247 1.042 2.795.795.087-.617.334-1.042.607-1.284-2.13-.243-4.363-1.066-4.363-4.721 0-1.046.374-1.899.982-2.568-.098-.243-.425-1.215.093-2.53 0 0 .8-.257 2.628.988a9.145 9.145 0 012.3-.307c.783 0 1.56.103 2.3.307 1.827-1.245 2.627-.988 2.627-.988.518 1.315.19 2.287.093 2.53.608.669.982 1.522.982 2.568 0 3.663-2.237 4.475-4.372 4.712.344.295.65.882.65 1.776 0 1.284-.012 2.314-.012 2.63c0 .259.172.557.658.463C20.233 19.947 23 16.295 23 12c0-5.523-4.477-10-10-10z"/></svg>
@@ -111,7 +115,6 @@
                 </div>
             </div>
         </header>
-
         <!-- Who Am I Section -->
         <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8 mb-12" data-aos="fade-up">
             <h2 class="text-3xl font-bold text-[#1e90ff] dark:text-[#00ffff] mb-6 border-b-2 border-[#1e90ff] dark:border-[#00ffff] pb-2">whoami</h2>
