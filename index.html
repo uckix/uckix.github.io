@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!-- AOS Animate on Scroll Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Typed.js for typing effect -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -35,18 +37,18 @@
             border-radius: 10px;
         }
         html.light ::-webkit-scrollbar-thumb {
-            background: #1e90ff;
+            background: #4a90e2;
             border-radius: 10px;
         }
         html.dark ::-webkit-scrollbar-thumb {
-            background: #00ffff;
+            background: #50e3c2;
             border-radius: 10px;
         }
         html.light ::-webkit-scrollbar-thumb:hover {
-            background: #197fdf;
+            background: #357abd;
         }
         html.dark ::-webkit-scrollbar-thumb:hover {
-            background: #00e6e6;
+            background: #38c1a5;
         }
 
         /* Terminal style */
@@ -80,27 +82,32 @@
     <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#f4f4f4] to-gray-200 dark:from-[#0a192f] dark:to-[#1a2b4b] transition-colors duration-300">
 
         <!-- Header Section -->
-        <header class="w-full max-w-4xl bg-white/80 dark:bg-[#1a2b4b]/80 backdrop-blur-sm shadow-lg dark:shadow-xl rounded-xl p-6 sm:p-8 mb-12 flex flex-col sm:flex-row items-center sm:justify-between gap-6 sm:gap-0 transition-all duration-300" data-aos="fade-down">
+        <header class="sticky top-0 z-50 w-full max-w-4xl bg-white/80 dark:bg-[#1a2b4b]/80 backdrop-blur-sm shadow-lg dark:shadow-xl rounded-xl p-6 sm:p-8 mb-12 flex flex-col sm:flex-row items-center sm:justify-between gap-6 sm:gap-0 transition-all duration-300" data-aos="fade-down">
             <!-- Image now has margin-bottom on mobile, which disappears on larger screens -->
             <div class="flex-shrink-0">
-                <img src="pfpups.jpg" alt="SHAHRIYOR's Profile Picture" class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-4 border-[#1e90ff] dark:border-[#00ffff] shadow-md transform hover:scale-110 transition-transform duration-300">
+                <img src="pfpups.jpg" alt="SHAHRIYOR's Profile Picture" class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-4 border-[#4a90e2] dark:border-[#50e3c2] shadow-md transform hover:scale-110 transition-transform duration-300">
             </div>
             <!-- Text container is now centered on mobile, right-aligned on larger screens -->
             <div class="text-center sm:text-right flex-grow sm:pl-8">
                 <!-- Font sizes are now responsive -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1e90ff] dark:text-[#00ffff] mb-2 leading-tight">Hello, I'm <span class="block sm:inline">SHAHRIYOR</span></h1>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#4a90e2] dark:text-[#50e3c2] mb-2 leading-tight">Hello, I'm <span class="block sm:inline">SHAHRIYOR</span></h1>
                 <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-medium mb-4">A Passionate Tech Enthusiast | System Explorer</p>
                 <!-- Icons are centered on mobile -->
-                <div class="flex justify-center sm:justify-end space-x-4">
+                <div class="flex justify-center sm:justify-end space-x-4 items-center">
                     <!-- Social Links -->
-                    <a href="https://github.com/uckix" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-[#1e90ff] dark:text-gray-400 dark:hover:text-[#00ffff] transition duration-300 transform hover:scale-110">
+                    <a href="https://github.com/uckix" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-[#4a90e2] dark:text-gray-400 dark:hover:text-[#50e3c2] transition duration-300 transform hover:scale-110">
                         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.298 2.766 7.95 6.593 9.213.48.088.654-.209.654-.465 0-.23-.008-.847-.013-1.659-2.684.584-3.25-1.293-3.25-1.293-.44-.997-1.07-1.264-1.07-1.264-.875-.596.066-.584.066-.584.966.069 1.478.995 1.478.995.856 1.464 2.247 1.042 2.795.795.087-.617.334-1.042.607-1.284-2.13-.243-4.363-1.066-4.363-4.721 0-1.046.374-1.899.982-2.568-.098-.243-.425-1.215.093-2.53 0 0 .8-.257 2.628.988a9.145 9.145 0 012.3-.307c.783 0 1.56.103 2.3.307 1.827-1.245 2.627-.988 2.627-.988.518 1.315.19 2.287.093 2.53.608.669.982 1.522.982 2.568 0 3.663-2.237 4.475-4.372 4.712.344.295.65.882.65 1.776 0 1.284-.012 2.314-.012 2.63c0 .259.172.557.658.463C20.233 19.947 23 16.295 23 12c0-5.523-4.477-10-10-10z"/></svg>
                     </a>
-                    <a href="https://t.me/uckix" target="_blank" rel="noopener noreferrer" class="text-[#1e90ff] hover:text-[#197fdf] dark:text-[#00ffff] dark:hover:text-[#00e6e6] transition duration-300 transform hover:scale-110">
+                    <a href="https://t.me/uckix" target="_blank" rel="noopener noreferrer" class="text-[#4a90e2] hover:text-[#357abd] dark:text-[#50e3c2] dark:hover:text-[#38c1a5] transition duration-300 transform hover:scale-110">
                         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.14l16.05-5.66c.74-.26 1.39.24 1.16 1.2l-3.2 14.5c-.25.96-1 .47-1.42-.23l-4.08-4.2-4.02 3.86c-.44.43-1.2.2-1.23-.39z"/>
                         </svg>
                     </a>
+                    <!-- Theme switcher -->
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zM4.95 14.536a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707zM3.536 4.95a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414L3.536 6.364a1 1 0 010-1.414zM16 10a1 1 0 01-.293.707l-1.06 1.061a1 1 0 11-1.415-1.414l1.06-1.061a1 1 0 011.625.626zM5.364 3.536a1 1 0 00-1.414-1.414L3.243 2.828a1 1 0 101.414 1.414l.707-.707z"></path></svg>
+                    </button>
                 </div>
             </div>
         </header>
@@ -111,19 +118,7 @@
     <div class="terminal-window">
         <pre class="terminal-output">
 <span class="terminal-prompt">root@arch:~#</span> <span class="terminal-highlight">cat about.txt</span>
-I like figuring out how things work — especially when they're not supposed to be figured out.
-
-Spending time with Linux and learning about security.
-Sometimes it's breaking into systems (legally), sometimes it's just trying to make hardware do something cool.
-
-<span class="terminal-highlight">Currently:</span>
-Finding my path in cybersecurity. Exploring different areas to see what clicks.
-Learning the fundamentals. Building skills. Figuring out where I fit in.
-
-<span class="terminal-highlight">Philosophy:</span>
-Keep it simple. Stay curious.
-The best way to secure something is to know how it breaks.
-
+<span id="typed-output"></span>
 <span class="terminal-prompt">root@arch:~#</span> <span class="terminal-highlight">_</span>
         </pre>
     </div>
@@ -146,94 +141,99 @@ The best way to secure something is to know how it breaks.
         <!-- What I Did Section -->
         <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8 mb-12" data-aos="fade-up">
             <h2 class="text-3xl font-bold text-[#1e90ff] dark:text-[#00ffff] mb-6 border-b-2 border-[#1e90ff] dark:border-[#00ffff] pb-2">Tech Journey: Bytes & Insights</h2>
-            <div class="flex flex-col gap-6">
-                <div class="flex flex-col items-center p-6 rounded-lg bg-gray-50 dark:bg-gray-800/50 shadow-md">
+            <div class="flex flex-col gap-8">
+                <!-- Telegram Channel Card -->
+                <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
                     <p class="text-lg text-gray-700 dark:text-gray-300 text-center mb-6">
                         While I'm continuously working on new skills and smaller ventures, my primary hub for sharing insights, quick scripts, and mini-projects is my Telegram channel. Think of it as a live feed of my learning and explorations in the cybersecurity and development world!
                     </p>
-                    <a href="https://t.me/siriusmind" target="_blank" rel="noopener noreferrer" class="bg-[#1e90ff] hover:bg-[#197fdf] dark:bg-[#00ffff] dark:hover:bg-[#00e6e6] text-white dark:text-black font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center">
-                        <svg class="w-7 h-7 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.14l16.05-5.66c.74-.26 1.39.24 1.16 1.2l-3.2 14.5c-.25.96-1 .47-1.42-.23l-4.08-4.2-4.02 3.86c-.44.43-1.2.2-1.23-.39z"/>
-                        </svg>
-                        Join My Telegram Channel
-                    </a>
+                    <div class="text-center">
+                <a href="https://t.me/siriusmind" target="_blank" rel="noopener noreferrer" class="bg-[#4a90e2] hover:bg-[#357abd] dark:bg-[#50e3c2] dark:hover:bg-[#38c1a5] text-white dark:text-black font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 inline-flex items-center justify-center">
+                            <svg class="w-7 h-7 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.14l16.05-5.66c.74-.26 1.39.24 1.16 1.2l-3.2 14.5c-.25.96-1 .47-1.42-.23l-4.08-4.2-4.02 3.86c-.44.43-1.2.2-1.23-.39z"/>
+                            </svg>
+                            Join My Telegram Channel
+                        </a>
+                    </div>
                 </div>
 
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <h3 class="text-2xl font-semibold text-[#1e90ff] dark:text-[#00ffff] mb-2">School Bell Automation (ESP8266)</h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4">
-                        Developed an automated school bell system using an ESP8266 microcontroller, allowing for scheduled ringing and potential remote control. This project combines IoT principles with practical automation for educational environments, utilizing C++ programming.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full">ESP8266</span>
-                        <span class="bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 text-sm font-medium px-3 py-1 rounded-full">IoT</span>
-                        <span class="bg-purple-200 text-purple-800 dark:bg-purple-800 dark:text-purple-200 text-sm font-medium px-3 py-1 rounded-full">Automation</span>
-                        <span class="bg-red-200 text-red-800 dark:bg-red-800 dark:text-red-200 text-sm font-medium px-3 py-1 rounded-full">C++</span>
-                        <span class="bg-yellow-200 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200 text-sm font-medium px-3 py-1 rounded-full">Arduino IDE</span>
+                <!-- Projects Grid -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                <h3 class="text-2xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">School Bell Automation</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+                            An automated school bell system using an ESP8266, combining IoT with practical automation in C++.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full">ESP8266</span>
+                            <span class="bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 text-sm font-medium px-3 py-1 rounded-full">IoT</span>
+                            <span class="bg-red-200 text-red-800 dark:bg-red-800 dark:text-red-200 text-sm font-medium px-3 py-1 rounded-full">C++</span>
+                        </div>
+                <a href="https://github.com/uckix/school_bell2.0" target="_blank" rel="noopener noreferrer" class="text-[#4a90e2] hover:text-[#357abd] dark:text-[#50e3c2] dark:hover:text-[#38c1a5] font-medium inline-flex items-center group mt-auto">
+                            View Project on GitHub
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
                     </div>
-                    <a href="https://github.com/uckix/school_bell2.0" target="_blank" rel="noopener noreferrer" class="text-[#1e90ff] hover:text-[#197fdf] dark:text-[#00ffff] dark:hover:text-[#00e6e6] font-medium inline-flex items-center group">
-                        View Project on GitHub
-                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-                </div>
 
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <h3 class="text-2xl font-semibold text-[#1e90ff] dark:text-[#00ffff] mb-2">DIY WiFi Project (ESP8266)</h3>
-                    <p class="text-gray-700 dark:text-gray-300 mb-4">
-                        A hands-on exploration into wireless communication, where I built a custom WiFi-enabled device using the ESP8266. This project deepened my understanding of microcontroller capabilities and network interactions. You can find more details and a video of it on my Telegram channel.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full">ESP8266</span>
-                        <span class="bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 text-sm font-medium px-3 py-1 rounded-full">WiFi</span>
-                        <span class="bg-purple-200 text-purple-800 dark:bg-purple-800 dark:text-purple-200 text-sm font-medium px-3 py-1 rounded-full">DIY</span>
-                        <span class="bg-red-200 text-red-800 dark:bg-red-800 dark:text-red-200 text-sm font-medium px-3 py-1 rounded-full">Microcontroller</span>
+                    <!-- Project Card 2 -->
+                    <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
+                <h3 class="text-2xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">DIY WiFi Project</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+                            A hands-on exploration into wireless communication, building a custom WiFi-enabled device with an ESP8266.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full">ESP8266</span>
+                            <span class="bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 text-sm font-medium px-3 py-1 rounded-full">WiFi</span>
+                            <span class="bg-purple-200 text-purple-800 dark:bg-purple-800 dark:text-purple-200 text-sm font-medium px-3 py-1 rounded-full">DIY</span>
+                        </div>
+                <a href="https://t.me/siriusmind/321" target="_blank" rel="noopener noreferrer" class="text-[#4a90e2] hover:text-[#357abd] dark:text-[#50e3c2] dark:hover:text-[#38c1a5] font-medium inline-flex items-center group mt-auto">
+                            View Project on Telegram
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
                     </div>
-                    <a href="https://t.me/siriusmind/321" target="_blank" rel="noopener noreferrer" class="text-[#1e90ff] hover:text-[#197fdf] dark:text-[#00ffff] dark:hover:text-[#00e6e6] font-medium inline-flex items-center group">
-                        View Project on Telegram
-                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Certifications Section -->
         <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8 mb-12" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-[#1e90ff] dark:text-[#00ffff] mb-6 border-b-2 border-[#1e90ff] dark:border-[#00ffff] pb-2">Certifications</h2>
+    <h2 class="text-3xl font-bold text-[#4a90e2] dark:text-[#50e3c2] mb-6 border-b-2 border-[#4a90e2] dark:border-[#50e3c2] pb-2">Certifications</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- presecurity -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
                     <img src="presec.jpg" alt="Practical Network Security Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-semibold text-[#1e90ff] dark:text-[#00ffff] mb-2">PreSecuriy</h3>
+            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">PreSecuriy</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: TryHackMe</p>
                 </div>
                 <!-- Programming Fundamentals -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
                     <img src="progf.jpg" alt="Programming 100: Fundamentals Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-semibold text-[#1e90ff] dark:text-[#00ffff] mb-2">Programming 100: Fundamentals</h3>
+            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Programming 100: Fundamentals</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: TCM Security</p>
                 </div>
                 <!-- Linux Fundamentals -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
                     <img src="linuxf.jpg" alt="Linux 100: Fundamentals Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-semibold text-[#1e90ff] dark:text-[#00ffff] mb-2">Linux 100: Fundamentals</h3>
+            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Linux 100: Fundamentals</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: TCM Security</p>
                 </div>
                 <!-- Robotics -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
                     <img src="robo.jpg" alt="Robotics Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-semibold text-[#1e90ff] dark:text-[#00ffff] mb-2">Robotics Certificate</h3>
+            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Robotics Certificate</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: IT Park</p>
                 </div>
                 <!-- Python -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
                     <img src="py.jpg" alt="Python Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-semibold text-[#1e90ff] dark:text-[#00ffff] mb-2">Python Developer</h3>
+            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Python Developer</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: Sololearn.com</p>
                 </div>
                 <!-- Ethical Hacking -->
                 <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
                     <img src="hacking.jpg" alt="Ethical Hacking Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-semibold text-[#1e90ff] dark:text-[#00ffff] mb-2">Ethical Hacking</h3>
+            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Ethical Hacking</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: HackerX</p>
                 </div>
             </div>
@@ -241,12 +241,12 @@ The best way to secure something is to know how it breaks.
 
         <!-- Contact Section -->
         <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-[#1e90ff] dark:text-[#00ffff] mb-6 border-b-2 border-[#1e90ff] dark:border-[#00ffff] pb-2">Get in Touch</h2>
+    <h2 class="text-3xl font-bold text-[#4a90e2] dark:text-[#50e3c2] mb-6 border-b-2 border-[#4a90e2] dark:border-[#50e3c2] pb-2">Get in Touch</h2>
             <div class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 text-center">
                 <p>I'm always open to new opportunities, collaborations, or just a friendly chat about tech!</p>
                 <p>Feel free to reach out:</p>
                 <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-6">
-                    <a href="mailto:js7904282@gmail.com" class="text-[#1e90ff] hover:text-[#197fdf] dark:text-[#00ffff] dark:hover:text-[#00e6e6] font-semibold text-xl inline-flex items-center transition-colors duration-300">
+            <a href="mailto:js7904282@gmail.com" class="text-[#4a90e2] hover:text-[#357abd] dark:text-[#50e3c2] dark:hover:text-[#38c1a5] font-semibold text-xl inline-flex items-center transition-colors duration-300">
                         <svg class="w-7 h-7 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
                         js7904282@gmail.com
                     </a>
@@ -267,6 +267,18 @@ The best way to secure something is to know how it breaks.
         AOS.init({
             duration: 800, // animation duration
             once: true,    // whether animation should happen only once
+        });
+
+        new Typed('#typed-output', {
+            strings: [
+                "I like figuring out how things work — especially when they're not supposed to be figured out.^1000\n\nSpending time with Linux and learning about security.\nSometimes it's breaking into systems (legally), sometimes it's just trying to make hardware do something cool.^1000\n\n<span class='terminal-highlight'>Currently:</span>\nFinding my path in cybersecurity. Exploring different areas to see what clicks.\nLearning the fundamentals. Building skills. Figuring out where I fit in.^1000\n\n<span class='terminal-highlight'>Philosophy:</span>\nKeep it simple. Stay curious.\nThe best way to secure something is to know how it breaks."
+            ],
+            typeSpeed: 30,
+            backSpeed: 10,
+            loop: false,
+            showCursor: true,
+            cursorChar: '_',
+            smartBackspace: true
         });
 
         const htmlElement = document.documentElement;
@@ -291,6 +303,31 @@ The best way to secure something is to know how it breaks.
         } else {
             setTheme('light');
         }
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          lightIcon.classList.remove('hidden');
+        } else {
+          darkIcon.classList.remove('hidden');
+        }
+        themeToggleBtn.addEventListener('click', function() {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('theme')) {
+                if (localStorage.getItem('theme') === 'light') {
+                    setTheme('dark');
+                } else {
+                    setTheme('light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    setTheme('light');
+                } else {
+                    setTheme('dark');
+                }
+            }
+        });
     </script>
 </body>
 </html>
