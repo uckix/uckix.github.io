@@ -5,258 +5,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHAHRIYOR - Tech Enthusiast</title>
     <link rel="icon" type="image/png" href="logo.png">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter and Roboto Mono -->
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- AOS Animate on Scroll Library -->
+    
+    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Typed.js for typing effect -->
+    
+    <!-- Typed.js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4a90e2', // Light mode blue
+                        accent: '#50e3c2',  // Dark mode teal
+                        darkbg: '#0a192f',
+                        lightbg: '#f4f4f4'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color: 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        html.light body {
-            background-color: #f4f4f4;
-        }
-        html.dark body {
-            background-color: #0a192f;
-        }
+        
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
-        html.light ::-webkit-scrollbar-track {
-            background: #cbd5e1;
-            border-radius: 10px;
-        }
-        html.dark ::-webkit-scrollbar-track {
-            background: #2a3d54;
-            border-radius: 10px;
-        }
-        html.light ::-webkit-scrollbar-thumb {
-            background: #4a90e2;
-            border-radius: 10px;
-        }
-        html.dark ::-webkit-scrollbar-thumb {
-            background: #50e3c2;
-            border-radius: 10px;
-        }
-        html.light ::-webkit-scrollbar-thumb:hover {
-            background: #357abd;
-        }
-        html.dark ::-webkit-scrollbar-thumb:hover {
-            background: #38c1a5;
-        }
+        html.light ::-webkit-scrollbar-track { background: #cbd5e1; }
+        html.dark ::-webkit-scrollbar-track { background: #2a3d54; }
+        html.light ::-webkit-scrollbar-thumb { background: #4a90e2; border-radius: 4px; }
+        html.dark ::-webkit-scrollbar-thumb { background: #50e3c2; border-radius: 4px; }
 
-        /* Terminal style */
+        /* Terminal styling */
         .terminal-window {
-            background-color: #000000;
-            color: #00FF00;
-            font-family: 'Roboto Mono', monospace;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;
-            border: 1px solid #333333;
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
         }
-        .terminal-prompt {
-            color: #FFFF00;
-            font-weight: bold;
+        .terminal-header {
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
         }
-        .terminal-output {
-            white-space: pre-wrap;
-            word-break: break-word;
-            line-height: 1.5;
-            color: #00FF00;
+        .typed-cursor {
+            color: #50e3c2;
         }
-        .terminal-highlight {
-            color: #00FFFF;
-            font-weight: bold;
+        
+        /* Glass Card Effect */
+        .glass-card {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
     </style>
 </head>
-<body class="text-[#111111] dark:text-[#f8f8f2] antialiased transition-colors duration-300">
-    <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#f4f4f4] to-gray-200 dark:from-[#0a192f] dark:to-[#1a2b4b] transition-colors duration-300">
+<body class="bg-lightbg dark:bg-darkbg text-gray-800 dark:text-gray-200 antialiased overflow-x-hidden transition-colors duration-300">
+
+    <div class="min-h-screen flex flex-col items-center py-6 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#f4f4f4] to-gray-200 dark:from-[#0a192f] dark:to-[#112240]">
 
         <!-- Header Section -->
-        <header class="sticky top-0 z-50 w-full max-w-4xl bg-white/80 dark:bg-[#1a2b4b]/80 backdrop-blur-sm shadow-lg dark:shadow-xl rounded-xl p-6 sm:p-8 mb-12 flex flex-col sm:flex-row items-center sm:justify-between gap-6 sm:gap-0 transition-all duration-300" data-aos="fade-down">
-            <!-- Image now has margin-bottom on mobile, which disappears on larger screens -->
-            <div class="flex-shrink-0">
-                <img src="pfpups.jpg" alt="SHAHRIYOR's Profile Picture" class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-4 border-[#4a90e2] dark:border-[#50e3c2] shadow-md transform hover:scale-110 transition-transform duration-300">
-            </div>
-            <!-- Text container is now centered on mobile, right-aligned on larger screens -->
-            <div class="text-center sm:text-right flex-grow sm:pl-8">
-                <!-- Font sizes are now responsive -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#4a90e2] dark:text-[#50e3c2] mb-2 leading-tight">Hello, I'm <span class="block sm:inline">SHAHRIYOR</span></h1>
-                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-medium mb-4">A Passionate Tech Enthusiast | System Explorer</p>
-                <!-- Icons are centered on mobile -->
-                <div class="flex justify-center sm:justify-end space-x-4 items-center">
-                    <!-- Social Links -->
-                    <a href="https://github.com/uckix" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-[#4a90e2] dark:text-gray-400 dark:hover:text-[#50e3c2] transition duration-300 transform hover:scale-110">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.298 2.766 7.95 6.593 9.213.48.088.654-.209.654-.465 0-.23-.008-.847-.013-1.659-2.684.584-3.25-1.293-3.25-1.293-.44-.997-1.07-1.264-1.07-1.264-.875-.596.066-.584.066-.584.966.069 1.478.995 1.478.995.856 1.464 2.247 1.042 2.795.795.087-.617.334-1.042.607-1.284-2.13-.243-4.363-1.066-4.363-4.721 0-1.046.374-1.899.982-2.568-.098-.243-.425-1.215.093-2.53 0 0 .8-.257 2.628.988a9.145 9.145 0 012.3-.307c.783 0 1.56.103 2.3.307 1.827-1.245 2.627-.988 2.627-.988.518 1.315.19 2.287.093 2.53.608.669.982 1.522.982 2.568 0 3.663-2.237 4.475-4.372 4.712.344.295.65.882.65 1.776 0 1.284-.012 2.314-.012 2.63c0 .259.172.557.658.463C20.233 19.947 23 16.295 23 12c0-5.523-4.477-10-10-10z"/></svg>
+        <header class="sticky top-4 z-50 w-full max-w-4xl glass-card bg-white/70 dark:bg-[#112240]/80 border border-white/20 dark:border-gray-700 shadow-xl rounded-2xl p-6 mb-10 transition-all duration-300" data-aos="fade-down">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Profile Image & Text Group -->
+                <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left w-full md:w-auto">
+                    <div class="relative group">
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-blue-600 dark:from-accent dark:to-teal-600 rounded-full opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt blur"></div>
+                        <img src="pfpups.jpg" alt="Profile" class="relative w-28 h-28 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg transform transition duration-500 hover:scale-105">
+                    </div>
+                    
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                            Hello, I'm <span class="text-primary dark:text-accent">SHAHRIYOR</span>
+                        </h1>
+                        <p class="text-base md:text-lg text-gray-600 dark:text-gray-400 font-medium mt-1">
+                            Tech Enthusiast | System Explorer
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Icons & Theme Toggle -->
+                <div class="flex items-center gap-4">
+                    <!-- GitHub -->
+                    <a href="https://github.com/uckix" target="_blank" class="p-2 text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all transform hover:scale-110">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.298 2.766 7.95 6.593 9.213.48.088.654-.209.654-.465 0-.23-.008-.847-.013-1.659-2.684.584-3.25-1.293-3.25-1.293-.44-.997-1.07-1.264-1.07-1.264-.875-.596.066-.584.066-.584.966.069 1.478.995 1.478.995.856 1.464 2.247 1.042 2.795.795.087-.617.334-1.042.607-1.284-2.13-.243-4.363-1.066-4.363-4.721 0-1.046.374-1.899.982-2.568-.098-.243-.425-1.215.093-2.53 0 0 .8-.257 2.628.988a9.145 9.145 0 012.3-.307c.783 0 1.56.103 2.3.307 1.827-1.245 2.627-.988 2.627-.988.518 1.315.19 2.287.093 2.53.608.669.982 1.522.982 2.568 0 3.663-2.237 4.475-4.372 4.712.344.295.65.882.65 1.776 0 1.284-.012 2.314-.012 2.63c0 .259.172.557.658.463C20.233 19.947 23 16.295 23 12c0-5.523-4.477-10-10-10z"/></svg>
                     </a>
-                    <a href="https://t.me/uckix" target="_blank" rel="noopener noreferrer" class="text-[#4a90e2] hover:text-[#357abd] dark:text-[#50e3c2] dark:hover:text-[#38c1a5] transition duration-300 transform hover:scale-110">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.14l16.05-5.66c.74-.26 1.39.24 1.16 1.2l-3.2 14.5c-.25.96-1 .47-1.42-.23l-4.08-4.2-4.02 3.86c-.44.43-1.2.2-1.23-.39z"/>
-                        </svg>
+                    
+                    <!-- LinkedIn (Added) -->
+                    <a href="https://www.linkedin.com/in/shahriy0r" target="_blank" class="p-2 text-[#0077b5] hover:text-[#005582] transition-all transform hover:scale-110">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
-                    <!-- Theme switcher 
-                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zM4.95 14.536a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707zM3.536 4.95a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414L3.536 6.364a1 1 0 010-1.414zM16 10a1 1 0 01-.293.707l-1.06 1.061a1 1 0 11-1.415-1.414l1.06-1.061a1 1 0 011.625.626zM5.364 3.536a1 1 0 00-1.414-1.414L3.243 2.828a1 1 0 101.414 1.414l.707-.707z"></path></svg>
-                    </button> -->
+
+                    <!-- Telegram -->
+                    <a href="https://t.me/uckix" target="_blank" class="p-2 text-[#229ED9] hover:text-[#1c84b6] transition-all transform hover:scale-110">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.14l16.05-5.66c.74-.26 1.39.24 1.16 1.2l-3.2 14.5c-.25.96-1 .47-1.42-.23l-4.08-4.2-4.02 3.86c-.44.43-1.2.2-1.23-.39z"/></svg>
+                    </a>
+
+                    <!-- Theme Toggle (Restored) -->
+                    <button id="theme-toggle" type="button" class="ml-2 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-accent transition-colors">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1zM4.95 14.536a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707zM3.536 4.95a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414L3.536 6.364a1 1 0 010-1.414zM16 10a1 1 0 01-.293.707l-1.06 1.061a1 1 0 11-1.415-1.414l1.06-1.061a1 1 0 011.625.626zM5.364 3.536a1 1 0 00-1.414-1.414L3.243 2.828a1 1 0 101.414 1.414l.707-.707z"></path></svg>
+                    </button>
                 </div>
             </div>
         </header>
 
-        <!-- Who Am I Section -->
-       <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8 mb-12" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-[#1e90ff] dark:text-[#00ffff] mb-6 border-b-2 border-[#1e90ff] dark:border-[#00ffff] pb-2">whoami</h2>
-    <div class="terminal-window">
-        <pre class="terminal-output">
-<span class="terminal-prompt">root@arch:~#</span> <span class="terminal-highlight">cat about.txt</span>
-<span id="typed-output"></span>
-<span class="terminal-prompt">root@arch:~#</span> <span class="terminal-highlight">_</span>
-        </pre>
-    </div>
-</section>
-
-        <!-- My Skillset Section -->
-        <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8 mb-12" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-[#1e90ff] dark:text-[#00ffff] mb-6 border-b-2 border-[#1e90ff] dark:border-[#00ffff] pb-2">Skillset</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-                <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
-                <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino IDE" />
-                <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
-                <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
-                <img src="https://img.shields.io/badge/AI-000000?style=for-the-badge&logo=openai&logoColor=white" alt="AI" />
-                <img src="https://img.shields.io/badge/Automation-FF4A00?style=for-the-badge&logo=zapier&logoColor=white" alt="Automation" />
+        <!-- Who Am I Section (Terminal) -->
+        <section class="w-full max-w-4xl mb-12" data-aos="fade-up">
+            <div class="flex items-center gap-3 mb-4 px-2">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">whoami</h2>
+                <div class="h-0.5 flex-grow bg-gradient-to-r from-primary to-transparent dark:from-accent"></div>
+            </div>
+            
+            <div class="terminal-window rounded-xl overflow-hidden font-mono text-sm md:text-base">
+                <!-- Mac-style window controls -->
+                <div class="terminal-header p-3 flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition"></div>
+                    <div class="flex-grow text-center text-gray-500 text-xs select-none">root@arch: ~</div>
+                </div>
+                
+                <div class="p-6 text-green-400 min-h-[220px]">
+                    <div>
+                        <span class="text-purple-400 font-bold">root@arch</span>:<span class="text-blue-400">~</span># <span class="text-gray-300">cat about.txt</span>
+                    </div>
+                    <div class="mt-2 text-gray-300 whitespace-pre-wrap leading-relaxed"><span id="typed-output"></span></div>
+                </div>
             </div>
         </section>
 
-        <!-- What I Did Section -->
-        <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8 mb-12" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-[#1e90ff] dark:text-[#00ffff] mb-6 border-b-2 border-[#1e90ff] dark:border-[#00ffff] pb-2">Tech Journey: Bytes & Insights</h2>
-            <div class="flex flex-col gap-8">
+        <!-- Skillset Section -->
+        <section class="w-full max-w-4xl bg-white dark:bg-[#112240] shadow-xl rounded-xl p-8 mb-12 border border-gray-100 dark:border-gray-800" data-aos="fade-up">
+            <div class="flex items-center gap-3 mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">Skillset</h2>
+                <div class="h-0.5 flex-grow bg-gradient-to-r from-primary to-transparent dark:from-accent"></div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center sm:justify-start gap-3">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" class="shadow-sm hover:scale-105 transition-transform" alt="Python" />
+                <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" class="shadow-sm hover:scale-105 transition-transform" alt="Linux" />
+                <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" class="shadow-sm hover:scale-105 transition-transform" alt="Arduino IDE" />
+                <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" class="shadow-sm hover:scale-105 transition-transform" alt="C++" />
+                <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" class="shadow-sm hover:scale-105 transition-transform" alt="SQLite" />
+                <img src="https://img.shields.io/badge/AI-000000?style=for-the-badge&logo=openai&logoColor=white" class="shadow-sm hover:scale-105 transition-transform" alt="AI" />
+                <img src="https://img.shields.io/badge/Automation-FF4A00?style=for-the-badge&logo=zapier&logoColor=white" class="shadow-sm hover:scale-105 transition-transform" alt="Automation" />
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="w-full max-w-4xl mb-12" data-aos="fade-up">
+            <div class="flex items-center gap-3 mb-6 px-2">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">Tech Journey</h2>
+                <div class="h-0.5 flex-grow bg-gradient-to-r from-primary to-transparent dark:from-accent"></div>
+            </div>
+
+            <div class="flex flex-col gap-6">
                 <!-- Telegram Channel Card -->
-                <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg">
-                    <p class="text-lg text-gray-700 dark:text-gray-300 text-center mb-6">
-                        While I'm continuously working on new skills and smaller ventures, my primary hub for sharing insights, quick scripts, and mini-projects is my Telegram channel. Think of it as a live feed of my learning and explorations in the cybersecurity and development world!
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-[#112240] dark:to-[#1a2b4b] border border-blue-100 dark:border-gray-700 p-8 rounded-2xl shadow-lg relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-primary/10 dark:bg-accent/10 rounded-full blur-xl transition-all group-hover:bg-primary/20"></div>
+                    
+                    <p class="text-lg text-gray-700 dark:text-gray-300 text-center mb-6 relative z-10">
+                        While I'm continuously working on new skills and smaller ventures, my primary hub for sharing insights, quick scripts, and mini-projects is my Telegram channel.
                     </p>
-                    <div class="text-center">
-                <a href="https://t.me/siriusmind" target="_blank" rel="noopener noreferrer" class="bg-[#4a90e2] hover:bg-[#357abd] dark:bg-[#50e3c2] dark:hover:bg-[#38c1a5] text-white dark:text-black font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 inline-flex items-center justify-center">
-                            <svg class="w-7 h-7 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.14l16.05-5.66c.74-.26 1.39.24 1.16 1.2l-3.2 14.5c-.25.96-1 .47-1.42-.23l-4.08-4.2-4.02 3.86c-.44.43-1.2.2-1.23-.39z"/>
-                            </svg>
-                            Join My Telegram Channel
+                    <div class="text-center relative z-10">
+                        <a href="https://t.me/siriusmind" target="_blank" class="inline-flex items-center justify-center bg-primary hover:bg-blue-600 dark:bg-accent dark:hover:bg-teal-400 text-white dark:text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-1">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.14l16.05-5.66c.74-.26 1.39.24 1.16 1.2l-3.2 14.5c-.25.96-1 .47-1.42-.23l-4.08-4.2-4.02 3.86c-.44.43-1.2.2-1.23-.39z"/></svg>
+                            Join My Channel
                         </a>
                     </div>
                 </div>
 
                 <!-- Projects Grid -->
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Project Card 1 -->
-                    <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <h3 class="text-2xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">School Bell Automation</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Project 1 -->
+                    <div class="bg-white dark:bg-[#112240] p-6 rounded-2xl shadow-md hover:shadow-xl border border-transparent hover:border-primary/30 dark:hover:border-accent/30 transition-all duration-300 group flex flex-col h-full">
+                        <h3 class="text-xl font-bold text-primary dark:text-accent mb-2">School Bell Automation</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">
                             An automated school bell system using an ESP8266, combining IoT with practical automation in C++.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full">ESP8266</span>
-                            <span class="bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 text-sm font-medium px-3 py-1 rounded-full">IoT</span>
-                            <span class="bg-red-200 text-red-800 dark:bg-red-800 dark:text-red-200 text-sm font-medium px-3 py-1 rounded-full">C++</span>
+                            <span class="px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100">ESP8266</span>
+                            <span class="px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100">IoT</span>
+                            <span class="px-2 py-1 text-xs font-semibold rounded bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100">C++</span>
                         </div>
-                <a href="https://github.com/uckix/school_bell2.0" target="_blank" rel="noopener noreferrer" class="text-[#4a90e2] hover:text-[#357abd] dark:text-[#50e3c2] dark:hover:text-[#38c1a5] font-medium inline-flex items-center group mt-auto">
-                            View Project on GitHub
-                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <a href="https://github.com/uckix/school_bell2.0" target="_blank" class="inline-flex items-center text-primary dark:text-accent font-semibold hover:underline">
+                            View on GitHub <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
 
-                    <!-- Project Card 2 -->
-                    <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col">
-                <h3 class="text-2xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">DIY WiFi Project</h3>
-                        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+                    <!-- Project 2 -->
+                    <div class="bg-white dark:bg-[#112240] p-6 rounded-2xl shadow-md hover:shadow-xl border border-transparent hover:border-primary/30 dark:hover:border-accent/30 transition-all duration-300 group flex flex-col h-full">
+                        <h3 class="text-xl font-bold text-primary dark:text-accent mb-2">DIY WiFi Project</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">
                             A hands-on exploration into wireless communication, building a custom WiFi-enabled device with an ESP8266.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-200 text-blue-800 dark:bg-blue-800 dark:text-blue-200 text-sm font-medium px-3 py-1 rounded-full">ESP8266</span>
-                            <span class="bg-green-200 text-green-800 dark:bg-green-800 dark:text-green-200 text-sm font-medium px-3 py-1 rounded-full">WiFi</span>
-                            <span class="bg-purple-200 text-purple-800 dark:bg-purple-800 dark:text-purple-200 text-sm font-medium px-3 py-1 rounded-full">DIY</span>
+                            <span class="px-2 py-1 text-xs font-semibold rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100">ESP8266</span>
+                            <span class="px-2 py-1 text-xs font-semibold rounded bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100">WiFi</span>
+                            <span class="px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100">DIY</span>
                         </div>
-                <a href="https://t.me/siriusmind/321" target="_blank" rel="noopener noreferrer" class="text-[#4a90e2] hover:text-[#357abd] dark:text-[#50e3c2] dark:hover:text-[#38c1a5] font-medium inline-flex items-center group mt-auto">
-                            View Project on Telegram
-                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <a href="https://t.me/siriusmind/321" target="_blank" class="inline-flex items-center text-primary dark:text-accent font-semibold hover:underline">
+                            View on Telegram <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certifications Section 
-        <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8 mb-12" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-[#4a90e2] dark:text-[#50e3c2] mb-6 border-b-2 border-[#4a90e2] dark:border-[#50e3c2] pb-2">Certifications</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
-                    <img src="presec.jpg" alt="Practical Network Security Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">PreSecuriy</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: TryHackMe</p>
-                </div>
-                
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
-                    <img src="progf.jpg" alt="Programming 100: Fundamentals Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Programming 100: Fundamentals</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: TCM Security</p>
-                </div>
-                
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
-                    <img src="linuxf.jpg" alt="Linux 100: Fundamentals Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Linux 100: Fundamentals</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: TCM Security</p>
-                </div>
-                
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
-                    <img src="robo.jpg" alt="Robotics Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Robotics Certificate</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: IT Park</p>
-                </div>
-                
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
-                    <img src="py.jpg" alt="Python Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Python Developer</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: Sololearn.com</p>
-                </div>
-                
-                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center transform hover:-translate-y-1">
-                    <img src="hacking.jpg" alt="Ethical Hacking Certificate" class="w-full h-auto rounded-lg mb-4 object-contain border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl font-semibold text-[#4a90e2] dark:text-[#50e3c2] mb-2">Ethical Hacking</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm">Issued by: HackerX</p>
-                </div>
-            </div>
-        </section> -->
-
         <!-- Contact Section -->
-        <section class="w-full max-w-4xl bg-white dark:bg-[#1a2b4b] shadow-lg dark:shadow-xl rounded-xl p-8" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-[#4a90e2] dark:text-[#50e3c2] mb-6 border-b-2 border-[#4a90e2] dark:border-[#50e3c2] pb-2">Get in Touch</h2>
-            <div class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 text-center">
-                <p>I'm always open to new opportunities, collaborations, or just a friendly chat about tech!</p>
-                <p>Feel free to reach out:</p>
-                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-6">
-            <a href="mailto:js7904282@gmail.com" class="text-[#4a90e2] hover:text-[#357abd] dark:text-[#50e3c2] dark:hover:text-[#38c1a5] font-semibold text-xl inline-flex items-center transition-colors duration-300">
-                        <svg class="w-7 h-7 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
-                        js7904282@gmail.com
-                    </a>
-                </div>
-            </div>
+        <section class="w-full max-w-4xl bg-white dark:bg-[#112240] shadow-xl rounded-xl p-8 text-center" data-aos="fade-up">
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">Get in Touch</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">I'm always open to new opportunities, collaborations, or just a friendly chat about tech!</p>
+            <a href="mailto:js7904282@gmail.com" class="inline-flex items-center justify-center gap-2 text-lg font-semibold text-primary dark:text-accent hover:underline decoration-2 underline-offset-4 transition-all">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                js7904282@gmail.com
+            </a>
         </section>
 
         <!-- Footer -->
-        <footer class="w-full max-w-4xl text-center text-gray-600 dark:text-gray-400 mt-12 py-4 border-t border-gray-300 dark:border-gray-700">
-            &copy; 2025 SHAHRIYOR. All rights reserved. Built with ❤️ and Code.
+        <footer class="mt-12 text-center text-gray-500 text-sm pb-4">
+            &copy; 2025 SHAHRIYOR. Built with ❤️ and Code.
         </footer>
 
     </div>
@@ -265,67 +249,61 @@
     <script>
         // Initialize AOS
         AOS.init({
-            duration: 800, // animation duration
-            once: true,    // whether animation should happen only once
+            duration: 800,
+            once: true,
+            offset: 50
         });
 
+        // Typed.js Configuration
         new Typed('#typed-output', {
             strings: [
-                "I like figuring out how things work — especially when they're not supposed to be figured out.^1000\n\nSpending time with Linux and learning about security.\nSometimes it's breaking into systems (legally), sometimes it's just trying to make hardware do something cool.^1000\n\n<span class='terminal-highlight'>Currently:</span>\nFinding my path in cybersecurity. Exploring different areas to see what clicks.\nLearning the fundamentals. Building skills. Figuring out where I fit in.^1000\n\n<span class='terminal-highlight'>Philosophy:</span>\nKeep it simple. Stay curious.\nThe best way to secure something is to know how it breaks."
+                "I like figuring out how things work — especially when they're not supposed to be figured out.^1000\n\nSpending time with Linux and learning about security.\nSometimes it's breaking into systems (legally), sometimes it's just trying to make hardware do something cool.^1000\n\n<span class='text-primary dark:text-accent font-bold'>Currently:</span>\nFinding my path in cybersecurity. Exploring different areas to see what clicks.\nLearning the fundamentals. Building skills.^1000\n\n<span class='text-primary dark:text-accent font-bold'>Philosophy:</span>\nKeep it simple. Stay curious.\nThe best way to secure something is to know how it breaks."
             ],
-            typeSpeed: 30,
-            backSpeed: 10,
+            typeSpeed: 25,
+            backSpeed: 0,
             loop: false,
             showCursor: true,
             cursorChar: '_',
-            smartBackspace: true
         });
 
+        // Theme Toggle Logic
         const htmlElement = document.documentElement;
-
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                htmlElement.classList.add('dark');
-                htmlElement.classList.remove('light');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                htmlElement.classList.add('light');
-                htmlElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
         const themeToggleBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          lightIcon.classList.remove('hidden');
-        } else {
-          darkIcon.classList.remove('hidden');
+
+        // Check local storage or system preference
+        function initTheme() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlElement.classList.add('dark');
+                htmlElement.classList.remove('light');
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            } else {
+                htmlElement.classList.remove('dark');
+                htmlElement.classList.add('light');
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            }
         }
+
+        initTheme();
+
+        // Toggle functionality
         themeToggleBtn.addEventListener('click', function() {
+            // Toggle icons
             darkIcon.classList.toggle('hidden');
             lightIcon.classList.toggle('hidden');
-            if (localStorage.getItem('theme')) {
-                if (localStorage.getItem('theme') === 'light') {
-                    setTheme('dark');
-                } else {
-                    setTheme('light');
-                }
+
+            // Toggle Class
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                htmlElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
             } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    setTheme('light');
-                } else {
-                    setTheme('dark');
-                }
+                htmlElement.classList.remove('light');
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
             }
         });
     </script>
